@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/search_background"
+            android:layout_marginStart="12dp"
             android:ems="10"
             android:inputType="text"
             android:maxLines="1"
