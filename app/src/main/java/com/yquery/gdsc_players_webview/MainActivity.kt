@@ -16,7 +16,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.webViewButton.setOnClickListener {
-            startActivity(Intent(this, WebViewActivity::class.java))
+            if (!binding.searchInput.text.isNullOrBlank()){
+                val intent = Intent(this, WebViewActivity::class.java)
+
+                intent.putExtra("link", binding.searchInput.text)
+
+                startActivity(intent)
+            }
         }
 
         binding.playAudioButton.setOnClickListener {

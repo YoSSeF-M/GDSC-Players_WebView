@@ -14,8 +14,10 @@ class WebViewActivity : AppCompatActivity() {
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val link = intent.extras!!.get("link")
+
         val myWebView = binding.webView
-        myWebView.loadUrl("https://www.google.com")
+        myWebView.loadUrl("https://www.google.com/search?q=$link")
         myWebView.settings.javaScriptEnabled = true
         myWebView.webViewClient = WebViewClient()
 
